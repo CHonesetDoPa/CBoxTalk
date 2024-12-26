@@ -1,0 +1,81 @@
+{
+  "name": "cboxtalk",
+  "version": "0.0.1",
+  "description": "A simple dialogue-based visual novel system based on Node.js and Electron",
+  "main": "core.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "electron . --devtools",
+    "build": "electron-builder",
+    "build-64": "electron-builder --win --x64",
+    "build-linux": "electron-builder --linux --x64",
+    "build-arm64": "electron-builder --linux --arm64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CHonesetDoPa/CBoxTalk.git"
+  },
+  "keywords": [
+    "visualnovel"
+  ],
+  "author": {
+    "name": "CHonesetDoPa",
+    "email": "ch@nekoc.cc"
+  },
+  "build": {
+    "appId": "app.nyac.cboxtalk",
+    "productName": "CBoxTalk",
+    "copyright": "Copyright © 2024 CHonesetDoPa",
+    "publish": null,
+    "afterPack": "moveLicense.js",
+    "directories": {
+      "output": "dist"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "license": "license/EXTRA.LICENSE_CN.txt",
+      "installerIcon": "./src/assets/icon/logo-mixed.ico",
+      "uninstallerIcon": "./src/assets/icon/logo-mixed.ico",
+      "installerHeaderIcon": "./src/assets/icon/logo-mixed.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "CBoxTalk"
+    },
+    "files": [
+      "src/**/*",
+      "core.js",
+      "coreUI.html",
+      "node_modules/**/*",
+      "package.json",
+      "render.js",
+      "preload.js"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable",
+        "zip"
+      ],
+      "icon": "src/assets/icon/logo-mixed.ico"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "icon": "src/assets/icon/logo-mixed.ico"
+    }
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CHonesetDoPa/CBoxTalk/issues"
+  },
+  "homepage": "https://github.com/CHonesetDoPa/CBoxTalk#readme",
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  }
+}

@@ -1,0 +1,26 @@
+body {
+  font-size: 16px; /* 默认字体大小 */
+}
+
+h1 {
+  font-size: 2em; /* 相对于body字体大小的2倍 */
+}
+
+@media (max-width: 1200px) {
+  body {
+    font-size: 14px; /* 屏幕宽度小于1200px时的字体大小 */
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    font-size: 12px; /* 屏幕宽度小于800px时的字体大小 */
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: 10px; /* 屏幕宽度小于400px时的字体大小 */
+  }
+}
+
